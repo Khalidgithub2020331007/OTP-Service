@@ -2,6 +2,7 @@
     npm install -g create-react-app
     npx create-react-app my-react-app
     cd my-react-app
+    npm i otp-input-react
     npm start
 
 # For npm
