@@ -3,6 +3,7 @@
     npx create-react-app my-react-app
     cd my-react-app
     npm i otp-input-react
+    npm install react-phone-input-2  --save
     npm start
 
 # For npm
