@@ -19,15 +19,14 @@ const App=()=>
     function onCaptchVerify() {
         if (!window.recaptchaVerifier) {
           window.recaptchaVerifier = new RecaptchaVerifier(
-            "recaptcha-container",
+            auth,"recaptcha-container",
             {
               size: "invisible",
               callback: (response) => {
-                onSignup();
+         
               },
               "expired-callback": () => {},
-            },
-            auth
+            }
           );
         }
       }
@@ -77,7 +76,7 @@ const App=()=>
             user?
             (
                 <h2 className="text-center text-white font-medium text-2xl">
-            👍Login Success
+            Right OTP
           </h2>
             ):(
                 <div className="w-80 flex flex-col gap-4 rounded-lg p-4">
