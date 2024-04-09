@@ -1,4 +1,3 @@
-
 import { BsFillShieldLockFill, BsTelephoneFill } from 'react-icons/bs';
 import OtpInput from "otp-input-react";
 import { useState } from 'react';
@@ -24,7 +23,7 @@ const App=()=>
             {
               size: "invisible",
               callback: (response) => {
-
+                  onSignup();
               },
               "expired-callback": () => {},
             }
@@ -34,17 +33,17 @@ const App=()=>
       function onSignup() {
         setLoading(true);
         onCaptchVerify();
-
+    
         const appVerifier = window.recaptchaVerifier;
-
+    
         const formatPh = "+" + ph;
-
+    
         signInWithPhoneNumber(auth, formatPh, appVerifier)
           .then((confirmationResult) => {
             window.confirmationResult = confirmationResult;
             setLoading(false);
             setShowOTP(true);
-            toast.success("OTP sended successfully!");
+            toast.success("OTP sended successfully");
           })
           .catch((error) => {
             console.log(error);
@@ -66,7 +65,7 @@ const App=()=>
             setLoading(false);
           });
       }
-
+    
 
     return(
          <section className="bg-emerald-500 flex items-center justify-center h-screen"> 
@@ -103,16 +102,16 @@ const App=()=>
                          disabled={false}
                          autoFocus
                          className="otp-container"
-
+                         
                          ></OtpInput>
-
+        
                          <button onClick={onOTPVerify} className=" font-bold bg-emerald-600 w1-full flex gap-1 items-center  justify-center py-2 text-white rounded">
                             {loading &&
                             <CgSpinner size={20} className="mt-1 animate-spin"/>
                             }
                             <span>Verify OTP</span>
                          </button>
-
+                         
                          </> 
 
                     ):
@@ -135,23 +134,24 @@ const App=()=>
                     }
                     <span>Send Code Via SMS</span>
                  </button>
-
+                 
                  </>
                     )
                 }
-
-
+              
+              
 
             </div>
             )
 
-
+               
             }
-
-
+           
+         
          </div>
          </section>
     );
 };
 
 export default App;
+
